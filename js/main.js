@@ -2,11 +2,23 @@ const bar_a = document.querySelector(".icon-bar-a");
 const bar_b = document.querySelector(".icon-bar-b");
 const navbar = document.querySelector(".navbar-toggler");
 const menu = document.querySelector(".navbar-nav");
+const regBtn = document.querySelector(".reg-btn");
 const progressBara = document.querySelector(".progress-bar-a");
 const progressBarb = document.querySelector(".progress-bar-b");
 const progressBarc = document.querySelector(".progress-bar-c");
 const progressBard = document.querySelector(".progress-bar-d")
 const progressBare = document.querySelector(".progress-bar-e");
+
+if(localStorage?.user_id){
+    regBtn.innerHTML=`<a href="#" id="logout" class="button_nav">Logout</a>`;
+}else{
+    regBtn.innerHTML=`<a href="./login.html" class="button_nav">JOIN ME</a>`;
+}
+
+const logout = document.querySelector('#logout');
+
+
+if(progressBara){
 
 window.addEventListener("scroll",()=>{
     progressBara.style.width = "85%";
@@ -15,6 +27,9 @@ progressBarc.style.width = "70%";
 progressBard.style.width = "95%";
 progressBare.style.width = "75%";
 })
+}
+
+
 
 navbar.addEventListener("click",()=>{
     if(bar_a.style.marginLeft == "10px"){
@@ -39,3 +54,24 @@ navbar.addEventListener("click",()=>{
    
 
 });
+
+    if (logout) {
+        logout.addEventListener('click', async (e) => {
+          e.preventDefault();
+          try {
+            await axios.get(`${globalURL}/api/v1/user/logout`);
+            popup(success, 'Logged out successfully');
+            setTimeout(() => {
+              location.reload();
+            }, 3000);
+          } catch (error) {
+            console.log(error);
+            if (error.response.data?.message) {
+              popup(failure, `${error.response.data.message}`);
+            } else {
+              popup(failure, `${error.message}`);
+            }
+          }
+        });
+      }
+

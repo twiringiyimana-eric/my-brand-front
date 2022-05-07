@@ -1,0 +1,1 @@
+let globalURL = window.location.origin.includes("herokuapp") ? window.location.origin : "http://localhost:3000";
