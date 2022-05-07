@@ -9,69 +9,66 @@ const progressBarc = document.querySelector(".progress-bar-c");
 const progressBard = document.querySelector(".progress-bar-d")
 const progressBare = document.querySelector(".progress-bar-e");
 
-if(localStorage?.user_id){
-    regBtn.innerHTML=`<a href="#" id="logout" class="button_nav">Logout</a>`;
-}else{
-    regBtn.innerHTML=`<a href="./login.html" class="button_nav">JOIN ME</a>`;
+
+if (jwt && jwt !== "loggedout") {
+
+    regBtn.innerHTML = `<a href="#" id="logout" class="button_nav">Logout</a>`;
+} else {
+    regBtn.innerHTML = `<a href="./login.html" class="button_nav">JOIN ME</a>`;
 }
 
 const logout = document.querySelector('#logout');
 
 
-if(progressBara){
+if (progressBara) {
 
-window.addEventListener("scroll",()=>{
-    progressBara.style.width = "85%";
-progressBarb.style.width = "90%";
-progressBarc.style.width = "70%";
-progressBard.style.width = "95%";
-progressBare.style.width = "75%";
-})
+    window.addEventListener("scroll", () => {
+        progressBara.style.width = "85%";
+        progressBarb.style.width = "90%";
+        progressBarc.style.width = "70%";
+        progressBard.style.width = "95%";
+        progressBare.style.width = "75%";
+    })
 }
 
 
 
-navbar.addEventListener("click",()=>{
-    if(bar_a.style.marginLeft == "10px"){
+navbar.addEventListener("click", () => {
+    if (bar_a.style.marginLeft == "10px") {
 
         bar_a.style.marginLeft = "0px";
-    }else{
+    } else {
         bar_a.style.marginLeft = "10px";
     }
-    if(bar_b.style.marginLeft == "-10px"){
+    if (bar_b.style.marginLeft == "-10px") {
 
         bar_b.style.marginLeft = "0px";
-    }else{
+    } else {
         bar_b.style.marginLeft = "-10px";
     }
-    if( menu.style.opacity == "1"){
+    if (menu.style.opacity == "1") {
         menu.style.opacity = "0"
         menu.style.height = "0px"
-    }else{
+    } else {
         menu.style.opacity = "1"
         menu.style.height = "282px"
     }
-   
+
 
 });
 
-    if (logout) {
-        logout.addEventListener('click', async (e) => {
-          e.preventDefault();
-          try {
-            await axios.get(`${globalURL}/api/v1/user/logout`);
-            popup(success, 'Logged out successfully');
-            setTimeout(() => {
-              location.reload();
-            }, 3000);
-          } catch (error) {
-            console.log(error);
-            if (error.response.data?.message) {
-              popup(failure, `${error.response.data.message}`);
-            } else {
-              popup(failure, `${error.message}`);
-            }
-          }
-        });
-      }
+if (logout) {
+    logout.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        document.cookie = "jwt=loggedout";
+        localStorage.setItem(`user_id`, ``);
+        localStorage.setItem(`user_email`, ``);
+        localStorage.setItem(`user_name`, ``);
+        popup(success, 'Logged out successfully');
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
+    });
+}
 

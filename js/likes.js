@@ -1,6 +1,6 @@
 async function handleLike(blogId) {
   try {
-    await axios.post(`${globalURL}/api/v1/blogs/like/${blogId}`);
+    await axios.post(`${globalURL}/api/v1/blogs/like/${blogId}`,{jwt: `${jwt}`});
     location.reload();
   } catch (error) {
     console.log(error);

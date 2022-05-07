@@ -23,7 +23,7 @@ contactform.addEventListener('submit', async (e) => {
 
   disibleControl.style.display = 'block';
   try {
-    await axios.post(`/api/v1/messages/`, {
+    await axios.post(`${globalURL}/api/v1/messages/`, {
       email,
       name,
       subject,
