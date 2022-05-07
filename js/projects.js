@@ -1,5 +1,5 @@
 
-let projectsCard = document.querySelector('.main_content');
+let projectsCard = document.querySelector('.projects-api');
 const projects = fetch(`${globalURL}/api/v1/projects`)
     .then(data => data.json());
 

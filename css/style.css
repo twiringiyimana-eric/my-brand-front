@@ -1893,3 +1893,5 @@ button:focus {
   border: 1px solid rgb(255 219 95);
   background: #bb8a0085;
 }
+
+.reg-btn{display: flex;}

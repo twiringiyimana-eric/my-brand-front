@@ -51,7 +51,7 @@ navbar.addEventListener("click", () => {
         menu.style.height = "0px"
     } else {
         menu.style.opacity = "1"
-        menu.style.height = "282px"
+        menu.style.height = "340px"
     }
 
 
