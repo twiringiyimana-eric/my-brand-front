@@ -1241,7 +1241,7 @@ button:focus {
 }
 
 .blog_details {
-  padding-top: 20px;
+  padding: 20px;
 }
 .blog_details h2 {
   font-size: 24px;

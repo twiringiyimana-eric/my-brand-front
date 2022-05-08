@@ -48,8 +48,10 @@ navbar.addEventListener("click", () => {
     }
     if (menu.style.opacity == "1") {
         menu.style.opacity = "0"
+        menu.style.visibility = "hidden";
         menu.style.height = "0px"
     } else {
+        menu.style.visibility = "visible";
         menu.style.opacity = "1"
         menu.style.height = "340px"
     }
