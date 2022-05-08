@@ -11,7 +11,7 @@
         padding: 0 50px;
     }
     .home_banner_area .container .media{
-        transform: translate(-50%, 11%);
+        transform: translate(-50%, 15%);
     }
     .home_banner_area .container .media .banner_content{
         display: block;
@@ -67,6 +67,9 @@
     }
 }
 @media (max-width:500px){
+    .tab-content {
+        margin-top: 50px;
+    }
     .nav-white{
         display: none;
     }
