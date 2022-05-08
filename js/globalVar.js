@@ -1,4 +1,4 @@
-let globalURL = window.location.origin.includes("github") ? window.location.origin : "http://localhost:3000";
+let globalURL = window.location.origin.includes("github") ? "https://uwambajeeddy.herokuapp.com" : "http://localhost:3000";
 
 function getCookie(cname) {
     let name = cname + "=";
