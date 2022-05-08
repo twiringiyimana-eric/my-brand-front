@@ -1350,6 +1350,9 @@ button:focus {
   align-self: center;
   padding-left: 20px;
 }
+.blog_right_sidebar .popular_post_widget .post_item img{
+  width: 110px;
+}
 .blog_right_sidebar .popular_post_widget .post_item .post_item_img {
   width: 110px;
 }
