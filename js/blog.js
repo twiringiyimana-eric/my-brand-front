@@ -11,8 +11,7 @@ const blogApi = fetch(`${globalURL}/api/v1/blogs/${window.location.search.split(
 const blogs = fetch(`${globalURL}/api/v1/blogs`).then(data => data.json());
 
 blogApi.then(res => {
-  blog = res.data.blog[0];
-  const newLikes = blog.likedBy;
+  blog = res.data.blog[0];;
   let date = `${new Date(blog.date)}`.split(" ");
   blogCard.innerHTML += `
         <img src="${globalURL}/img/blog/${blog.image}" alt="">
@@ -22,7 +21,7 @@ blogApi.then(res => {
                 <li onclick="handleLike('${blog._id}')">
                 ${blog.likedBy.length} Like${blog.likedBy.length > 1 ?
       "s" : ""}<i
-                  class="fa fa-heart${newLikes.indexOf(localStorage.user_id) >= 0 ? '' : '-o'}"
+                  class="fa fa-heart${blog.likedBy.indexOf(localStorage.user_id) >= 0 ? '' : '-o'}"
                 ></i>
               </li>
               <li>
