@@ -1864,7 +1864,6 @@ button:focus {
   border-radius: 5px;
   display: flex;
   box-shadow: 0 0 10px rgb(0 0 0 / 55%);
-  color: rgb(255 255 255);
   z-index: 99;
   padding: 0 12px;
   transition: transform 0.5s ease-in-out;
@@ -1881,20 +1880,24 @@ button:focus {
 }
 
 .popup-success {
-  transform: translate(120%, -50%);
-  border: 1px solid rgb(0 169 13 / 46%);
-  background: rgb(0 227 17 / 46%);
+  color: rgb(21 201 0);
+    transform: translate(120%, -50%);
+    border: 1px solid rgb(0 255 20);
+    background: rgb(230 255 231);
 }
 .popup-failure {
+  color: rgb(255 0 0);
   transform: translate(120%, -50%);
   border: 1px solid rgb(255, 0, 0);
-  background: #ff000091;
+  background: #ffdbdb;
 }
 
 .popup-warning {
-  transform: translate(120%, -50%);
-  border: 1px solid rgb(255 219 95);
-  background: #bb8a0085;
+  color: rgb(213 138 0);
+    transform: translate(120%, -50%);
+    border: 1px solid rgb(255 198 0);
+    background: #fff9e7;
+  
 }
 
 .reg-btn{display: flex;}

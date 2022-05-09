@@ -30,7 +30,7 @@ contactform.addEventListener('submit', async (e) => {
     localStorage.setItem(`user_name`, `${res.data.data.user.name}`);
     popup(success, 'Account created successfully');
     setTimeout(() => {
-      location.assign('/blog.html');
+      location.assign('./blog.html');
     }, 3000);
   } catch (error) {
     console.log(error);
