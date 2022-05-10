@@ -23,7 +23,7 @@ if (jwt && jwt !== "loggedout") {
         <div id="mc_embed_signup">
         <form target="_blank" action="#" method="get" class="subscribe_form relative">
         <div class="Newsletter_form input-group">
-        <a href="/admin" class="btn sub-btn">Dashboard <span class="lnr lnr-arrow-right"></span>
+        <a href="${location.origin.includes("github") ? "https://uwambajeeddy.herokuapp.com/admin" : "localhost:3000/admin"}" class="btn sub-btn">Dashboard <span class="lnr lnr-arrow-right"></span>
         </a>
         </div>
         <div class="mt-10 info"></div>
