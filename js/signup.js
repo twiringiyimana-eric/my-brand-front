@@ -28,6 +28,7 @@ contactform.addEventListener('submit', async (e) => {
     localStorage.setItem(`user_id`, `${res.data.data.user._id}`);
     localStorage.setItem(`user_email`, `${res.data.data.user.email}`);
     localStorage.setItem(`user_name`, `${res.data.data.user.name}`);
+    localStorage.setItem(`user_role`, `${res.data.data.user.role}`);
     popup(success, 'Account created successfully');
     setTimeout(() => {
       location.assign('./blog.html');
